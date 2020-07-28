@@ -1,0 +1,6 @@
+# gitignore for my cs_learning workspace/directory
+
+/bin
+/obj
+/.vscode
+/.DS_Store
