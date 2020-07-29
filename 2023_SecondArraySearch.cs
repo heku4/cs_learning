@@ -15,30 +15,31 @@ namespace cs_learning
             int secondLength = int.Parse(Console.ReadLine());
             int[] secondArray = Console.ReadLine().Split().Select(e => int.Parse(e)).ToArray();
             List<int> resultList = new List<int>();
-            if (firstLength > secondLength)
+
+            for (int i = 0; i < firstLength; i++)
             {
-                for (int i = 0; i < secondLength; i++)
+                for (int j = 0; j < secondLength; j++)
                 {
-                    if (secondArray[i] == firstArray[i]) resultList.Add(secondArray[i]);
+                    if (firstArray[i] == secondArray[j])
+                    {
+                        resultList.Add(firstArray[i]);
+                        break;
+                    }
+
                 }
+
             }
-            else
-            {
-                for (int i = 0; i < firstLength; i++)
-                {
-                    if (firstArray[i] == secondArray[i]) resultList.Add(firstArray[i]);
-                }
-            }
+
             int[] resultArray = resultList.ToArray();
 
             Console.Write("{0} \n", resultArray.Length);
-            if ( resultArray.Length != 0)
+            if (resultArray.Length != 0)
             {
                 for (int i = 0; i < resultArray.Length; i++)
                 {
                     Console.Write("{0} ", resultArray[i]);
                 }
-            } else Console.Write("");
+            }
 
         }
     }
